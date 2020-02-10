@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<launch>
+	<include file="$(find ouster_backpack_bringup)/launch/os1-h-64.launch" />
+	<include file="$(find ouster_backpack_bringup)/launch/os1-v-16.launch" />
+	<include file="$(find microstrain_driver)/launch/3dm_gx5_15.launch" />
+	<include file="$(find barometer)/launch/barometer.launch"/>
+	<param name="robot_description"
+		textfile="$(find ouster_backpack_bringup)/urdf/2_ouster_backpack.urdf" />
+  
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+</launch>
